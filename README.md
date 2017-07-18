@@ -1,27 +1,24 @@
 
 ## How to create a theme by Sage
 
-1. Add a service docker
+### Add a service docker
 ```
   wp-theme:
-    image: toancong/wp-sage:sage8.5
+    image: toancong/wp-sage:sage9
     volumes:
       - ./wp-content/themes:/usr/source
 ```
 
-2. Create a your theme
-```
-docker-compose run --rm wp-theme composer create-project roots/sage your-theme-name 8.5.1
-```
+### Create a your theme
 
-3. Install dependency packages for develop theme
-```
-docker-compose run --rm wp-theme bash -c "cd your-theme-name && npm install && bower install --allow-root"
-```
-
-Step 2 & 3 can become
+#### Sage 8.5
 ```
 docker-compose run --rm wp-theme bash -c "composer create-project roots/sage your-theme-name 8.5.1 && cd your-theme-name && npm install && bower install --allow-root"
 ```
 
-4. See the theme in your backend `/wp-admin/themes.php`
+#### Sage 9
+```
+docker-compose run --rm wp-theme bash -c "composer create-project roots/sage green-island dev-master && cd green-island && yarn"
+````
+
+See the theme in your backend `/wp-admin/themes.php`
