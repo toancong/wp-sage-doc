@@ -18,7 +18,7 @@ docker-compose run --rm wp-theme bash -c "composer create-project roots/sage you
 
 #### Sage 9
 ```
-docker-compose run --rm wp-theme bash -c "composer create-project roots/sage green-island dev-master && cd green-island && yarn"
+docker-compose run --rm wp-theme bash -c "composer create-project roots/sage your-theme-name dev-master && cd your-theme-name && yarn"
 ````
 
 See the theme in your backend `/wp-admin/themes.php`
